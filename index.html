@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acceleration Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA==" crossorigin="anonymous" />
+
+</head>
+<body>
+
+<div class="my-4 py-2">
+    <div class="has-background-light p-2 m-4">
+		<div class="columns is-mobile">
+		    <div class="column is-6"> 
+		    	<div class="is-size-3 has-text-weight-medium">Given</div>
+		    </div> 
+			<div class="column is-6">
+		            <div class="select is-sucess">
+			            <select id="given">
+                            <option value="Speed Difference" selected>Speed Difference</option>
+                            <option value="Distance Traveled">
+                	        Distance Traveled
+                            </option>
+                            <option value="Mass and force"> Mass and force </option>
+		                </select>
+		            </div>
+			</div>
+		</div>
+    </div>
+    <div class="has-background-light p-2 m-4">
+    	<div class="is-size-4 has-text-weight-medium" id="selectGiven"> 	Speed Diffrence : </div>
+    </div>
+<div class="has-background-light p-2 m-4"> 
+<section class="speed">
+   <div class="columns by-3 is-gapless is-mobile">
+   	   <div class="column is-3"> 
+            <div class="label is-normal">Initial Speed :</div>
+   	    </div>
+   	    <div class="column is-6">
+	   	    <div class="control">
+	   	  	  <input type="text" id="Vi" class="input">
+	   	    </div>
+	   	 </div>
+	   	 <div class="column is-3">
+            <div class="select is-sucess">
+   				<select id="Vi">
+   					<option value="m/s" selected>m/s</option>
+					<option value="km/h">km/h</option>
+					<option value="ft/s">ft/s</option>
+					<option value="mile/h">mile/h</option>
+					<option value="km/s">km/s</option>
+					<option value="mile/s">mile/s</option>
+					<option value="c" >c</option>
+   		     		<option value="knots">knots</option>
+   				</select>
+  	        </div>
+  	    </div>
+    </div>
+
+
+    <div class="columns is-gapless is-mobile final-speed">
+		<div class="column is-3"> 
+			<div class="label is-normal">Final Speed</div>
+		</div>
+		<div class="column is-6">
+			<div class="control">
+				<input type="text" class="input" id="Vf">
+			</div>
+		</div>
+		<div class="column is-3">
+         	<div class="select is-sucess">
+   				<select id="Vf">
+   				<option value="m/s" selected>m/s</option>
+				<option value="km/h">km/h</option>
+				<option value="ft/s">ft/s</option>
+				<option value="mile/h">mile/h</option>
+				<option value="km/s">km/s</option>
+				<option value="mile/s">mile/s</option>
+				<option value="c" >c</option>
+   		    	<option value="knots">knots</option>
+   				</select>
+  	  		</div>
+  	  	</div>
+	</div>
+
+	<div class="columns is-gapless is-mobile distance">
+		<div class="column is-3"> 
+			<div class="label is-normal">Distance : </div>
+		</div>
+		<div class="column is-6" id="normal-dist">
+			<div class="control">
+				<input type="text"  class="input" id="distance" />
+			</div>
+		</div>
+			
+	    <div id="m-cm" class="column is-6">
+	    	<div  class="columns is-gapless is-mobile">
+				<div class="column is-4"> 
+            		<p class="control">
+						<input type="text" id="m" class="input">
+					</p>
+              	 </div>
+                <div class="column is-2">
+					<p class="control">
+						<a class="button is-static">m</a>
+					</p>
+			   	</div>
+				<div class="column is-4"> 
+					<p class="control">
+						<input class="input" type="text" id="cm">
+					</p>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">cm</a>
+					</p>
+				</div>
+			</div>
+	    </div>
+
+		<div id="ft-inch" class="column is-6">
+			<div class="columns is-gapless is-mobile"> 
+				<div class="column is-4"> 
+            		<p class="control">
+						<input type="text" id="ft" class="input">
+					</p>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">ft</a>
+					</p>
+			   	</div>
+				<div class="column is-4"> 
+					<p class="control">
+						<input class="input" type="text" id="inch">
+					</p>
+					</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">inch</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="column is-3">
+			<div class="select is-sucess">
+				<select id="distance">
+					<option value="mm">mm</option>
+					<option value="cm">cm</option>
+					<option value="m" selected>m</option>
+					<option value="km">km</option>
+					<option value="ft">ft</option>
+					<option value="yd">yd</option>
+					<option value="mile">mile</option>
+					<option value="ly" selected>ly</option>
+					<option value="au">au</option>
+					<option value="parsec">parsec</option>
+					<option value="inch">inch</option>
+					<option value="ft/inch">ft/inch</option>
+					<option class="m/cm">m/cm</option>
+				</select>
+		    </div>
+		</div>
+	</div>
+
+	<div class="columns is-mobile is-gapless">
+		<div class="column is-3">
+			<div class="label is-normal">Time : </div>
+		</div>
+        <div class="normal-time column is-6">
+        	<div class="control"> 
+        		<input class="input" id="time">
+        	</div>
+        </div>
+        <div class="min-sec column is-6">
+            <div class="columns is-gapless is-mobile">
+            	<div class="column is-4"> 
+            		<p class="control">
+						<input type="text" id="min" class="input">
+					</p>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">min</a>
+					</p>
+				</div>
+				<div class="column is-4"> 
+					<p class="control">
+						<input class="input" type="text" id="sec">
+					</p>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">sec</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="hrs-min column is-6">
+			<div class="columns is-gapless is-mobile">
+				<div class="column is-4">
+					<div class="control">
+						<input type="text" class="input" id="hrs">
+					</div>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static"> hrs</a>
+					</p>
+				</div>
+				<div class="column is-4">
+					<div class="control">
+						<input class="input" type="text" id="min2">
+					</div>
+				</div>
+				<div class="column is-2">
+					<p class="control">
+						<a class="button is-static">min</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="column is-3">
+			<div class="select">
+				<select id="time">
+					<option value="sec">sec</option>
+						<option value="min">min</option>
+						<option value="hrs">hrs</option>
+						<option value="dys">dys</option>
+						<option value="week">week</option>
+						<option value="month">month</option>
+						<option value="yrs" >yrs</option>
+						<option value="sec" selected>s</option>
+						<option value="min/sec">min/sec</option>
+						<option value="hrs/min">hrs/min</option>
+						<option value="ms">millisecs</option>
+				</select>			
+			</div>
+		</div>
+    </div>	
+
+</section>
+
+<section class="force">
+	<div class="columns is-mobile is-gapless">
+		<div class="column is-3">
+			<div class="label is-normal"> Mass :</div>
+		</div>
+		<div class="column is-6">
+			<div class="control">
+				<input id="mass" class="input">
+			</div>
+		</div>
+		<div class="column is-3">
+			<div class="select is-sucess">
+				<select id="mass">
+					<option value="kg" selected> kg</option>
+					<option value="t"> tons </option>
+					<option value="Ib"> Ib</option>
+					<option value="stone">stones</option>
+					<option value="USton"> US ton</option>
+					<option value="LongTon"> imperial tons </option>
+					<option value="mg">mg</option>
+			   		<option value="g">g</option>
+		       		<option value="oz">oz</option>
+		       		<option value="gr">gr</option>
+		       	 	<option value="dr">dr</option>
+		   		</select>
+		   	</div>
+		</div>
+	</div>
+
+	<div class="columns is-mobile is-gapless">
+		<div class="column is-3">
+			<div class="label is-normal">Net Force : </div>
+		</div>
+	    <div class="column is-6">
+	    	<div class="control">
+	    		<input type="text" id="force" class="input" >
+	    	</div>
+	    </div>
+	    <div class="column is-3">
+	    	<div class="select is-sucess">
+	    		<select id="force" class="custom-select">
+	    			<option selected value="N">N</option>
+	    			<option value="KN">KN</option>
+	    			<option value="MN">MN</option>
+	    			<option value="GN">GN</option>
+	    			<option value="TN">TN</option>
+	    	    	<option value="pdl">pdl</option>
+	    	     	<option value="Ibf">Ibf</option>
+	    	     	<option value="dyn">dyn</option>
+	    		</select>
+	    	</div>
+	    </div>
+	</div>
+</section>
+</div>
+<div class="has-background-light p-2 m-4">
+	<div class="my-3 columns is-mobile is-gapless">
+		<div class="column is-3">
+			  <div class="is-normal label">Acceleration :</div>
+		</div>
+		<div class="column is-6">
+			<div class="control">
+				<input type="text" id="acceleration" class="input"
+				placeholder="Acceleration" readonly>
+			</div>
+		</div>
+		<div class="column is-3">
+			<div class="select">
+				<select class="custom-select" id="acceleration">
+					<option value="m/s²" selected> m/s² </option>
+					<option value="g">g</option>
+					<option value="ft/s²">ft/s²</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+	
+
+
+<script defer type="text/javascript" src="src/view_change.js"></script>
+<script defer type="text/javascript" src="src/handle_unit_change.js"></script>
+<script defer type="text/javascript" src="src/on_data_change.js"></script>
+<script defer type="text/javascript" src="src/calcl_acc.js"></script>
+<script defer type="text/javascript" src="src/kernel.js"></script>
+<script defer type="text/javascript" src="src/unit_convert_funcs.js"></script>
+<script defer type="text/javascript" src="src/time_change.js"></script>
+<script defer type="text/javascript" src="src/distance_change.js"></script>
+</body>
+</html>
